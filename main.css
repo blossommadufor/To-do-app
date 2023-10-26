@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header h1{
+    font-size: 23px;
+}
+
+header, form{
+    min-height: 12vh;
+}
+
+form input{
+    padding: 1rem;
+    width: 5rem;
+}
+
+form button{
+    padding: 0.95rem;
+}
+
+select{
+    width: 6rem;
+    padding: 1rem;
+}
