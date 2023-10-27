@@ -5,12 +5,14 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
+// const popDiv = document.querySelector('.pop-div')
 
 // EVENT LISTENERS
 
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deletecheck);
 filterOption.addEventListener('click', filterTodo)
+todoList.addEventListener('todo.remove()' , popUpMessage);
 document.addEventListener('DOMContentLoaded', getTodos);
 
 
@@ -21,15 +23,25 @@ function addTodo(event){
     // prevent form from submitting
     event.preventDefault();
 
-    // Todo Div
+    if(todoInput.value === ""){
+        alert("Add A Todo")
+        return false
+    }
+
+    else{
+         // Todo Div
     const todoDiv = document.createElement('div')
     todoDiv.classList.add('todo')
+  
+
 
     // create LI
     const newTodo = document.createElement('li')
     newTodo.classList.add('todo-item');
-    newTodo.innerText = todoInput.value;
+    const capitalizeInput = todoInput.value[0].toUpperCase() + todoInput.value.slice(1).toLowerCase() ;
+    newTodo.innerText = capitalizeInput;
     todoDiv.appendChild(newTodo);
+
 
     // CHECK BUTTON
     const checkedButton = document.createElement('button')
@@ -56,6 +68,8 @@ function addTodo(event){
 
     todoInput.value = "";
 }
+    }
+
 
 function deletecheck(s){
     const item = s.target;
@@ -190,5 +204,44 @@ function removeLocalTodos(todo){
 
     localStorage.setItem('todos', JSON.stringify(todos));
     
+
+
 }
+
+
+   
+function popUpMessage () {
+
+            // CREATE MESSAGE DIV
+
+            if(todoList === ""){
+
+                const messageDiv = document.createElement('div')
+                messageDiv.classList.add('popDiv')
+                
+                // CREATE PARAGRAPH
+                
+                const messagePar = document.createElement('p');
+                messagePar.classList.add('pop-paragraph');
+                messagePar.innerText = ' No Pending to=dos';
+                messageDiv.appendChild(messagePar)
+            }
+
+             else{
+            popDiv.style.display = 'none';
+            };
+           
+        }
+
+       
+   
+
+
+
+
+
+
+       
+    
+
 

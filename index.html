@@ -9,25 +9,35 @@
 </head>
 <body>
     <header>
-        <h1>Blossom's Todo List</h1>
+        <h1>Blossom's Todo List 🤎</h1>
     </header>
 
-    <form>
-        <input type="text" class="todo-input">
-        <button class="todo-button" type="submit" >Add</button>
-        <div class="select">
-            <select name="todos" class="filter-todo">
-                <option value="all">All</option>
-                <option value="completed">Completed</option>
-                <option value="uncompleted">Uncompleted</option>
-            </select>
+    <div class="box-display">
+        <form>
+            <input type="text" class="todo-input">
+            <button class="todo-button" type="submit" >Add</button>
+            <div class="select">
+                <select name="todos" class="filter-todo">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="uncompleted">Uncompleted</option>
+                </select>
+            </div>
+        </form>
+    
+        <div class="todo-container">
+            <ul class="todo-list"></ul>
+    
+            <div class="pending-todos">
+    
+            </div>
+              
         </div>
-    </form>
-
-    <div class="todo-container">
-        <ul class="todo-list"></ul>
-          
     </div>
+<!-- 
+    <div class="pop-div">
+
+    </div> -->
 
     
 
