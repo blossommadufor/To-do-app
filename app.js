@@ -5,6 +5,7 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
+// const taskComplete = document.querySelector('.task-complete')
 // const popDiv = document.querySelector('.pop-div')
 
 // EVENT LISTENERS
@@ -209,39 +210,29 @@ function removeLocalTodos(todo){
 }
 
 
-   
 function popUpMessage () {
 
-            // CREATE MESSAGE DIV
+    if(todos.value === []) {
 
-            if(todoList === ""){
+    const popDiv = document.createElement('div')
+    popDiv.classList.add('pop-up-div')
+  
 
-                const messageDiv = document.createElement('div')
-                messageDiv.classList.add('popDiv')
-                
-                // CREATE PARAGRAPH
-                
-                const messagePar = document.createElement('p');
-                messagePar.classList.add('pop-paragraph');
-                messagePar.innerText = ' No Pending to=dos';
-                messageDiv.appendChild(messagePar)
+
+    // create LI
+    const popLi = document.createElement('li')
+    popLi.classList.add('pop-up-li');
+    popLi.innerText = 'No pending to-dos👍';
+    popDiv.appendChild(popLi);
+              
+    }
+
+    else{
+    taskComplete.style.display = 'none'
             }
 
-             else{
-            popDiv.style.display = 'none';
-            };
-           
-        }
 
-       
-   
-
-
-
-
-
-
-       
-    
-
+    // taskComplete.classList.add('pop-up');
+    // taskComplete.innerText = "No Pending To-dos "
+}
 
