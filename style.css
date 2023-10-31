@@ -79,36 +79,18 @@ form button:hover{
 .todo-list{
     display: initial;
     position: absolute;
-    /* background-color: plum; */
     background-color: #fffff0;
     min-width: 30%;
     list-style: none;
     overflow-y: scroll;
     width: 98%;
     height: 50vh;
-    /* margin-top: 18rem; */
-    /* margin-left: 3.6rem; */
-    /* z-index: 1; */
 }
 
 .todo-list::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px #fffff0;
 }
 
-.task-complete{
-    position: absolute;
-    display: none;
-    background-color: red;
-    height: 50vh;
-    width: 98%;
-}
-
-.task-complete.pop-up{
-    display: block;
-    background-color: pink;
-    width: 50px;
-    
-}
 
 .todo-list::-webkit-scrollbar-thumb {
     background-color: rgb(232, 209, 179);
@@ -130,16 +112,6 @@ form button:hover{
     align-items: center;
     transition: all 0.5s ease;
 }
-
-
-.popDiv{
-    display: none;
-}
-
-.pop-up-div{
-    background-color: pink;
-}
-
 
 .todo-item{
     font-size: 15px;
@@ -189,7 +161,6 @@ form button:hover{
 }
 
 .fall{
-    /* transform: translateY(80px) rotate(20deg); */
     opacity: 0;
     animation: 1s slide-left;
 
@@ -247,11 +218,14 @@ select{
 }
 
 .pop-up-div{
-    display: initial;
-    background-color: blueviolet;
+    z-index: 1;
+    column-gap: #685445;
 }
 
 .pop-up-li{
-    color: red;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #685445;
 }
+
 

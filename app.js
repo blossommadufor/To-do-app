@@ -5,8 +5,9 @@ const todoInput = document.querySelector('.todo-input');
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo');
-// const taskComplete = document.querySelector('.task-complete')
-// const popDiv = document.querySelector('.pop-div')
+const popUpDiv = document.querySelector('.pop-up-div')
+const popUpLi = document.querySelector('.pop-up-li')
+
 
 // EVENT LISTENERS
 
@@ -142,9 +143,14 @@ function saveLocalTodos(todo){
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
 
+    popUpMessage() 
+
+
 }
 
 function getTodos(){
+
+    
 
     let todos;
 
@@ -190,6 +196,7 @@ function getTodos(){
 function removeLocalTodos(todo){
     let todos;
 
+
       // CHECK---- DO I ALREADY HAVE THINGS IN THERE?
     //  let todos;
 
@@ -206,33 +213,29 @@ function removeLocalTodos(todo){
     localStorage.setItem('todos', JSON.stringify(todos));
     
 
+    popUpMessage() 
 
 }
 
 
 function popUpMessage () {
+   
 
-    if(todos.value === []) {
+    let data = localStorage.getItem('todos')
 
-    const popDiv = document.createElement('div')
-    popDiv.classList.add('pop-up-div')
-  
+    data = JSON.parse(data)
 
+    console.log(data.length)
+    
 
-    // create LI
-    const popLi = document.createElement('li')
-    popLi.classList.add('pop-up-li');
-    popLi.innerText = 'No pending to-dos👍';
-    popDiv.appendChild(popLi);
-              
+    if( data.length === 0 ) {
+        popUpDiv.style.display = 'block';
     }
 
     else{
-    taskComplete.style.display = 'none'
-            }
+        popUpDiv.style.display = 'none';
+    };
+};
 
 
-    // taskComplete.classList.add('pop-up');
-    // taskComplete.innerText = "No Pending To-dos "
-}
-
+popUpMessage() 
